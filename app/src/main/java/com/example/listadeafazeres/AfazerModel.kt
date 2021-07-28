@@ -9,22 +9,22 @@ class AfazerModel (title: String? = "", body: String? = "", userName: String? = 
         this.body = body!!
         this.userName = userName!!
     }
-    fun getTitle(): String? {
+    fun getTitle(): String {
         return title
     }
-    fun setTitle(name: String?) {
-        title = name!!
+    fun setTitle(name: String) {
+        title = name
     }
-    fun getBody(): String? {
+    fun getBody(): String {
         return body
     }
-    fun setBody(userName: String?) {
-        this.body = body!!
+    fun setBody(name: String) {
+        body = name
     }
-    fun getUserName(): String? {
+    fun getUserName(): String {
         return userName
     }
-    fun setUserName(genre: String?) {
-        this.userName = userName!!
+    fun setUserName(name: String) {
+        userName = name
     }
 }

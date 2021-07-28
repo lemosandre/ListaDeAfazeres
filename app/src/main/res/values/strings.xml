@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">ListaDeAfazeres</string>
+    <string name="radio_male">Homem</string>
+    <string name="radio_female">Mulher</string>
 </resources>

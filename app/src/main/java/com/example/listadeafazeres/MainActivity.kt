@@ -28,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         button.setOnClickListener {
             editor.putString("key_name", editText.text.toString());
-            editor.commit();
+            editor.apply();
             val intent = Intent(this, ListaActivity::class.java)
             startActivity(intent)
         }

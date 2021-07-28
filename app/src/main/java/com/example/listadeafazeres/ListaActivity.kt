@@ -21,6 +21,7 @@ class ListaActivity : AppCompatActivity() {
 
     private val afazerList = ArrayList<AfazerModel>()
     private lateinit var afazerAdapter: AfazerAdapter
+    private lateinit var recyclerView: RecyclerView
 
     private lateinit var _db: DatabaseReference
     private var name: String? = ""
@@ -43,9 +44,9 @@ class ListaActivity : AppCompatActivity() {
         val actionbar = supportActionBar
 
         actionbar!!.setDisplayHomeAsUpEnabled(true)
-        actionbar!!.setDisplayHomeAsUpEnabled(true)
+        actionbar.setDisplayHomeAsUpEnabled(true)
 
-        val recyclerView: RecyclerView = findViewById(R.id.recyclerView)
+        recyclerView = findViewById(R.id.recyclerView)
         afazerAdapter = AfazerAdapter(afazerList)
         val layoutManager = LinearLayoutManager(applicationContext)
         recyclerView.layoutManager = layoutManager
@@ -100,15 +101,22 @@ class ListaActivity : AppCompatActivity() {
     private fun prepareMovieData(name: String) {
         _db.child("Lista").addValueEventListener(object : ValueEventListener{
             override fun onDataChange(snapshot: DataSnapshot) {
-                if(snapshot.exists()){
-                    for (data in snapshot.children){
-                        val lista = data.getValue(AfazerModel::class.java)
-                        afazerList.add(lista!!)
-                    }
+                val list = ArrayList<AfazerModel>()
+                for (data in snapshot.children){
+                    val model = data.getValue(AfazerModel::class.java)
+                    list.add(model!!)
                 }
-                afazerAdapter.notifyDataSetChanged()
+
+                if (list.size > 0){
+
+                    autoNumber = list.size + 1
+
+                    afazerAdapter = AfazerAdapter(list)
+                    recyclerView.adapter = afazerAdapter
+                }
 
             }
+
 
             override fun onCancelled(error: DatabaseError) {
                 TODO("Not yet implemented")
