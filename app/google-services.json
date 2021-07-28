@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "934443846556",
+    "project_id": "listadeafazeres-d038a",
+    "storage_bucket": "listadeafazeres-d038a.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:934443846556:android:55503fe8d9bd6342ffd659",
+        "android_client_info": {
+          "package_name": "com.example.listadeafazeres"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "934443846556-ta7f8a4kba2ucb5ln92v02bueorr33m5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcDnA-pusiiF8HMGkHrQhCKspxpZg3-84"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "934443846556-ta7f8a4kba2ucb5ln92v02bueorr33m5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
